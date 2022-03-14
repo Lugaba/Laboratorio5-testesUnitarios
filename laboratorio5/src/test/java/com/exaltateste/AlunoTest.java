@@ -13,7 +13,36 @@ public class AlunoTest {
     Aluno objAluno = new Aluno();
 
     @Test
-    public void testSomeMethod() {
-        assertEquals("Nota válida", objAluno.validarNota(8.5));
+    public void testNotaValida() {
+        // CT02
+        assertEquals("Nota válida", objAluno.validarNota(6.0));
+
+        // CT05
+        assertEquals("Nota válida", objAluno.validarNota(0.0));
+
+        // CT06
+        assertEquals("Nota válida", objAluno.validarNota(1.0));
+
+        // CT07
+        assertEquals("Nota válida", objAluno.validarNota(9.0));
+
+        // CT08
+        assertEquals("Nota válida", objAluno.validarNota(10.0));
+    }
+
+    @Test
+    public void testNotaInvalida() {
+        // CT01
+        assertEquals("Nota inválida", objAluno.validarNota(-5.0));
+
+        // CT03
+        assertEquals("Nota inválida", objAluno.validarNota(15.0));
+
+        // CT04
+        assertEquals("Nota inválida", objAluno.validarNota(-1.0));
+
+        // CT09
+        assertEquals("Nota inválida", objAluno.validarNota(11.0));
+
     }
 }
